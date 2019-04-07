@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mixture-of-Gaussian Clustering
-categories: machine learning
+categories: machine_learning
 ---
 
 # Mixture-of-Gaussian Clustering
