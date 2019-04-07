@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Predicting the Results of Tennis Matchs Based on Beyesian Classfication Rule",
-		"image": "tennis.jpg",
+		"image": "https://raw.githubusercontent.com/delin1997/delin1997.github.io/master/tennis.jpg",
 		"url": "#",
 		"date": "Jun 2018",
 		"tags": ["Bayes Classiﬁcation Rule","MVA","R","Mathematical Analysis"]
