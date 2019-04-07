@@ -8,7 +8,7 @@
 	},
 	{
 		"name": "Dependency Ratio and Future Education Level Improvement Based on Panel Data Regression",
-		"image": "dependency ratio.emf",
+		"image": "dependency_ratio.png",
 		"url": "/projects/dependency ratio.pdf",
 		"date": "May 2019",
 		"tags": ["Panel Data Regression","Econometrics","R"]
