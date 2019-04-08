@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Mixture-of-Gaussian Clustering
-categories: machine_learning
+categories: machine learning
 ---
 
 # Mixture-of-Gaussian Clustering
 
 Author: Delin Zhao
-
+---
+### Probability density of Gaussian distribution:
 First we should write a function which can return the probability density of Gaussian distribution, or multivariate normal distribution for future use.
 
 {% highlight R %}
@@ -17,8 +18,8 @@ dmvnorm <- function(x,mu,sigma){
   return(y)
 }
 {% endhighlight %}
-
-## Mixtrue-of-Guassian Clustering
+---
+### Main part of the code:
 
 {% highlight R %}
 Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alpha.start=alpha,iter=10,plot=TRUE){
@@ -82,11 +83,13 @@ Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alp
   return(tag_cl)
 }
 {% endhighlight %}
-
-## Use watermelon dataset 4.0 as an example:
+---
+### Use watermelon dataset 4.0 as an example:
 {% highlight R %}
-watermalon <- read.table("watermalon.txt",sep = ",",header=T)
+watermalon <- read.table("watermelon.txt",sep = ",",header=T)
 source("Mixture_of_Gaussian_clustering.R",encoding = "utf-8")
 tag_cl <- Mixture_of_Gaussian_clustering(k=3,D=watermalon[,2:3],iter = 20,plot = TRUE)
 {% endhighlight %}
 
+### Clustering results:
+---
