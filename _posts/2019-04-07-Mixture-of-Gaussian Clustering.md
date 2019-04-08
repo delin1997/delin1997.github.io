@@ -96,4 +96,5 @@ tag_cl <- Mixture_of_Gaussian_clustering(k=3,D=watermalon[,2:3],iter = 20,plot =
 {% endhighlight %}
 
 ### Clustering results:
+
 ---
