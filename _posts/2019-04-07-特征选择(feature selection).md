@@ -3,7 +3,9 @@ layout: post
 title: 特征选择(feature selection)
 categories: machine_learning
 ---
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 # 特征选择(feature selection)
 
 Author: Delin Zhao
