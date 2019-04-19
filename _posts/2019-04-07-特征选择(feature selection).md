@@ -25,4 +25,4 @@ this process until we can not find any better candidate subset. There are two ke
 subset based on the evaluation**(Subset search)**? And how to evaluate the goodness of candidate subsets**(Subset evaluation)**?
 
 ### Subset search problem
-Given a feature set \\({a_{1},a_{2},...,a_{d}}\\)
+Given a feature set $${a_{1},a_{2},...,a_{d}}$$
