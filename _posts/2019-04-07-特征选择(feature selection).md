@@ -24,5 +24,5 @@ One feasible way is to generate a **candidate subset** and evaluate it, and gene
 this process until we can not find any better candidate subset. There are two key points of this process: How to obtain the next candidate 
 subset based on the evaluation(**Subset search**)? And how to evaluate the goodness of candidate subsets(**Subset evaluation**)?
 
-#### Subset search problem
-Given
+### Subset search problem
+Given a feature set ${a_{1},a_{2},...,a_{d}}$
