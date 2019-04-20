@@ -44,7 +44,7 @@ Combining subset search machanism with Subset evaluation machanism we can the fe
 ### Filter
 (1) Feature selection for dataset;  
 (2) Train learners.(Irrelevant to the feature selection process) 
-
+&nbsp;
 #### **Relief(Relevant Features)**
 This algorithm designs a "relevant statistics" to measure the importance of features. It is a vector, with each componant corresponding to an initial feature, and the importance of a feature subset is determined by the summation of the componants which correspond to the features in the feature subset.
 Given a training set $$\{(\mathbf{x_{1}},y_{1}),(\mathbf{x_{2}},y_{2}),...,(\mathbf{x_{m}},y_{m})\}$$, for any $$\mathbf{x_{i}}$$, Relief will search for its **nearist neighbor** $$\mathbf{x_{i,nh}}$$ from the samples of the same type, called **"near-hit"**, and then search for its nearist neighbor $$\mathbf{x_{i,nm}}$$ from the samples of different types, called **"near-miss"**. So, the componant of the relevant statistics corresponding to attribute j is 
