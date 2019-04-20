@@ -49,7 +49,7 @@ Combining subset search machanism with Subset evaluation machanism we can the fe
 This algorithm designs a "relevant statistics" to measure the importance of features. It is a vector, with each componant corresponding to an initial feature, and the importance of a feature subset is determined by the summation of the componants which correspond to the features in the feature subset.
 Given a training set $$\{(\mathbf{x_{1}},y_{1}),(\mathbf{x_{2}},y_{2}),...,(\mathbf{x_{m}},y_{m})\}$$, for any $$\mathbf{x_{i}}$$, Relief will search for its **nearest neighbor** $$\mathbf{x_{i,nh}}$$ from the samples of the same type, called **"near-hit"**, and then search for its nearest neighbor $$\mathbf{x_{i,nm}}$$ from the samples of the different type, called **"near-miss"**. So, the componant of the relevant statistics corresponding to attribute j is 
 
-$$\delta^{j}=\sum\limits_{i}-diff(x_{i}^{j},x_{i,nh}^{j})^{2}+diff(x_{i}^{j},x_{i,nm}^{j})^{2}$$
+$$\delta^{j}=\sum\limits_{i}(-diff(x_{i}^{j},x_{i,nh}^{j})^{2}+diff(x_{i}^{j},x_{i,nm}^{j})^{2})$$
 
 where $$x_{a}^{j}$$ is the value $$\mathbf{x_{a}}$$ take on attribute j.  
 If attribute j is discrete,  $$diff(x_{a}^{j},x_{b}^{j})=0$$ if $$x_{a}^{j}=x_{b}^{j}$$, otherwise $$diff(x_{a}^{j},x_{b}^{j})=1$$.  
@@ -57,3 +57,12 @@ If attribute j is continuous, $$diff(x_{a}^{j},x_{b}^{j})=|x_{a}^{j}-x_{b}^{j}|$
 (e.g $$x^{*}=\frac{x-min}{max-min}$$)  
   
 #### **Relief-F**
+Relief is designed for binary classification problems but its extension Relief-F can handle multi-classification problems. Assume the samples in dataset D is from $$|\gamma|$$ categories. For $$\x_{i}$$, if it belongs to the kth class($$k\in\{1,2,...,|\gamma|\}$$), then Relief-F first choose its nearest neighbor from the samples of the kth type as the "near-hit" $$\mathbf{x_{i,nh}}$$, and then choose its nearest neighbor from the samples of each type other than the kth as the "near-miss" $$\mathbf{x_{i,l,nm}}$$(l=1,2,...,|\gamma|;l\neq k)$$. So the componant of the relevant statistics corresponding to attribute j is 
+
+$$\delta^{j}=\sum\limits_{i}(-diff(x_{i}^{j},x_{i,nh}^{j})^{2}+\sum\limits_{l\neq k}(p_{l}\times diff(x_{i}^{j},x_{i,l,nm}^{j})^{2}))$$
+
+where $$\p_{l}$$ is defined as above.
+
+---
+
+### Wrapper
