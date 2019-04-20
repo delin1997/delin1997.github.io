@@ -44,13 +44,16 @@ Combining subset search machanism with Subset evaluation machanism we can the fe
 ### Filter
 (1) Feature selection for dataset;  
 (2) Train learners.(Irrelevant to the feature selection process) 
-&nbsp;
+  
 #### **Relief(Relevant Features)**
 This algorithm designs a "relevant statistics" to measure the importance of features. It is a vector, with each componant corresponding to an initial feature, and the importance of a feature subset is determined by the summation of the componants which correspond to the features in the feature subset.
-Given a training set $$\{(\mathbf{x_{1}},y_{1}),(\mathbf{x_{2}},y_{2}),...,(\mathbf{x_{m}},y_{m})\}$$, for any $$\mathbf{x_{i}}$$, Relief will search for its **nearist neighbor** $$\mathbf{x_{i,nh}}$$ from the samples of the same type, called **"near-hit"**, and then search for its nearist neighbor $$\mathbf{x_{i,nm}}$$ from the samples of different types, called **"near-miss"**. So, the componant of the relevant statistics corresponding to attribute j is 
+Given a training set $$\{(\mathbf{x_{1}},y_{1}),(\mathbf{x_{2}},y_{2}),...,(\mathbf{x_{m}},y_{m})\}$$, for any $$\mathbf{x_{i}}$$, Relief will search for its **nearest neighbor** $$\mathbf{x_{i,nh}}$$ from the samples of the same type, called **"near-hit"**, and then search for its nearest neighbor $$\mathbf{x_{i,nm}}$$ from the samples of the different type, called **"near-miss"**. So, the componant of the relevant statistics corresponding to attribute j is 
 
 $$\delta^{j}=\sum\limits_{i}-diff(x_{i}^{j},x_{i,nh}^{j})^{2}+diff(x_{i}^{j},x_{i,nm}^{j})^{2}$$
 
 where $$x_{a}^{j}$$ is the value $$\mathbf{x_{a}}$$ take on attribute j.  
 If attribute j is discrete,  $$diff(x_{a}^{j},x_{b}^{j})=0$$ if $$x_{a}^{j}=x_{b}^{j}$$, otherwise $$diff(x_{a}^{j},x_{b}^{j})=1$$.  
-If attribute j is continuous, $$diff(x_{a}^{j},x_{b}^{j})=|x_{a}^{j}-x_{b}^{j}|$$, here x_{a}^{j},x_{b}^{j} has been normalized to [0,1].  (e.g $$x^{*}=\frac{x-min}{max-min}$$)  
+If attribute j is continuous, $$diff(x_{a}^{j},x_{b}^{j})=|x_{a}^{j}-x_{b}^{j}|$$, here $$x_{a}^{j},x_{b}^{j}$$ has been normalized to [0,1].  
+(e.g $$x^{*}=\frac{x-min}{max-min}$$)  
+  
+#### **Relief-F**
