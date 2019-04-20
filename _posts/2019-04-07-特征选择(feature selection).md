@@ -70,4 +70,7 @@ where $$p_{l}$$ is defined as above.
 Unlike filter feature selection which does not consider follow-up learners, wrappepr feature selection use the performance of final learners  as the evaluation criterion for feature subsets. So in terms of the performance of final learners, wrapper is better than filter, but on the other hand, the computational cost of wrapper will be much higher since it needs to train the learners for several time during the process.  
   
 #### **LVE(Las Vegas Wrapper)**
-  
+
+---
+### Reference
+《机器学习》周志华著.–北京：清华大学出版社
