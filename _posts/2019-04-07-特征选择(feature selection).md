@@ -57,11 +57,11 @@ If attribute j is continuous, $$diff(x_{a}^{j},x_{b}^{j})=|x_{a}^{j}-x_{b}^{j}|$
 (e.g $$x^{*}=\frac{x-min}{max-min}$$)  
   
 #### **Relief-F**
-Relief is designed for binary classification problems but its extension Relief-F can handle multi-classification problems. Assume the samples in dataset D is from $$|\gamma|$$ categories. For $$\x_{i}$$, if it belongs to the kth class($$k\in\{1,2,...,|\gamma|\}$$), then Relief-F first choose its nearest neighbor from the samples of the kth type as the "near-hit" $$\mathbf{x_{i,nh}}$$, and then choose its nearest neighbor from the samples of each type other than the kth as the "near-miss" $$\mathbf{x_{i,l,nm}}$$(l=1,2,...,|\gamma|;l\neq k)$$. So the componant of the relevant statistics corresponding to attribute j is 
+Relief is designed for binary classification problems but its extension Relief-F can handle multi-classification problems. Assume the samples in dataset D is from $$|\gamma|$$ categories. For $$x_{i}$$, if it belongs to the kth class($$k\in\{1,2,...,|\gamma|\}$$), then Relief-F first choose its nearest neighbor from the samples of the kth type as the "near-hit" $$\mathbf{x_{i,nh}}$$, and then choose its nearest neighbor from the samples of each type other than the kth as the "near-miss" $$\mathbf{x_{i,l,nm}}$$(l=1,2,...,|\gamma|;l\neq k)$$. So the componant of the relevant statistics corresponding to attribute j is 
 
 $$\delta^{j}=\sum\limits_{i}(-diff(x_{i}^{j},x_{i,nh}^{j})^{2}+\sum\limits_{l\neq k}(p_{l}\times diff(x_{i}^{j},x_{i,l,nm}^{j})^{2}))$$
 
-where $$\p_{l}$$ is defined as above.
+where $$p_{l}$$ is defined as above.
 
 ---
 
