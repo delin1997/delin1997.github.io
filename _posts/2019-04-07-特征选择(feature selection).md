@@ -43,7 +43,6 @@ Combining subset search machanism with Subset evaluation machanism we can the fe
 
 ### Filter
 (1) Feature selection for dataset;  
-(2) Train learners.(Irrelevant to the feature selection process)
-
-
+(2) Train learners.(Irrelevant to the feature selection process) 
+&nbsp;
 #### Relief(Relevant Features)
