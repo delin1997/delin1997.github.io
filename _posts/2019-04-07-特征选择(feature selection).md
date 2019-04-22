@@ -71,6 +71,7 @@ Unlike filter feature selection which does not consider follow-up learners, wrap
   
 #### **LVE(Las Vegas Wrapper)**
 
+![LVE algorithm](/assets/LVW.png);
 ---
 ### Reference
 《机器学习》周志华著.–北京：清华大学出版社
