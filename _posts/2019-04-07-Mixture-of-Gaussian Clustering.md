@@ -115,7 +115,7 @@ tag_cl <- apply(iter, 1, f)
 ---
 
 ### Clustering results:
-![Clustering results](/assets/result.pdf)
+![Clustering results](/assets/result.eps)
 
 ---
 
