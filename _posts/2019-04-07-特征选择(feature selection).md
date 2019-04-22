@@ -72,6 +72,7 @@ Unlike filter feature selection which does not consider follow-up learners, wrap
 #### **LVW(Las Vegas Wrapper)**
 
 ![LVW algorithm](/assets/LVW.png)
+![my alternate text](http://www.baidu.com)
 ---
 ### Reference
 《机器学习》周志华著.–北京：清华大学出版社
