@@ -32,23 +32,22 @@ dmvnorm <- function(x,mu,sigma){
 ### GMM-clustering:
 
 **Mix_Gaussian_cluster.R**
-{% highlight R %}
 Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alpha.start=alpha,iter=10,plot=TRUE){
-  #k is the number of mixture components.
-  #D is the dataset.
-  #mu is a matrix in which the first column is the mean vector of the first Gaussian distribution 
-  #and the second column corresponds to the second Gaussian distribution, etc.
-  #By default, the initial mu will be made up of the first k rows of the data.
-  #sigma is a three-dimension array in which the first matrix is the sigma matrix of the first Guassian 
-  #distribution and ect.
-  #By default, each matrix of the initial sigma is set as a diagonal matrix with each diagonal element 0.1.
-  #alpha is the mixture coefficient and it's a k*1 vector with each element 1/k by default.
-  #iter is the number of iteration and it's 10 by default.
-  #this code will by default plot a graph of clustering results as long as the data has only two variables.
+  # k is the number of mixture components.
+  # D is the dataset.
+  # mu is a matrix in which the first column is the mean vector of the first Gaussian distribution 
+  # and the second column corresponds to the second Gaussian distribution, etc.
+  # By default, the initial mu will be made up of the first k rows of the data.
+  # sigma is a three-dimension array in which the first matrix is the sigma matrix of the first Guassian 
+  # distribution and ect.
+  # By default, each matrix of the initial sigma is set as a diagonal matrix with each diagonal element 0.1.
+  # alpha is the mixture coefficient and it's a k*1 vector with each element 1/k by default.
+  # iter is the number of iteration and it's 10 by default.
+  # this code will by default plot a graph of clustering results as long as the data has only two variables.
   source("dmvnorm.R")
   D <- as.matrix(D)
   alpha <- rep(1/k,k)
-  mu <- matrix(c(D[6,],D[22,],D[27,]),nrow = 2)#for watermalon dataset
+  mu <- matrix(c(D[6,],D[22,],D[27,]),nrow = 2)
   #mu <- t(D[1:k,])
   n <- ncol(D)
   m <- nrow(D)
@@ -78,8 +77,9 @@ Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alp
     tag_cl[j] <- which.max(gamma[j,])
   }
   if(plot & n==2){
-    par(mar = c(5,5,5,5))
-    plot(NA,xlab = "x",ylab = "y",xlim = c(min(D[,1]),1.2*max(D[,1])), ylim = c(min(D[,2]),1.2*max(D[,2])))
+    par(mar = c(5,5,1,1))
+    plot(NA,xlab = "x",ylab = "y",xlim = c(min(D[,1]),1.2*max(D[,1])), ylim = c(min(D[,2]),1.2*max(D[,2])),
+      sub=paste("iterate",iter,"times"))
     points(D[,1],D[,2],type="p",pch=tag_cl)
     # points in different groups will have different shapes, one group one shape 
     center.x <- vector(length = k,mode = "numeric")
@@ -104,7 +104,7 @@ Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alp
 {% highlight R %}
 watermalon <- read.table("watermalon.txt",sep = ",",header=T)
 source("Mix_Gaussian_cluster.R",encoding = "utf-8")
-layout(matrix(1:4,nr=2,byrow = T))
+par(mfrow=c(2,2))
 iter <- matrix(c(5,10,20,50),nrow = 4)
 f <- function(x){
   Mixture_of_Gaussian_clustering(k=3,D=watermalon[,2:3],iter = x,plot = TRUE)
