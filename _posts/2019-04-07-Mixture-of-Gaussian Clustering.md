@@ -115,8 +115,7 @@ tag_cl <- apply(iter, 1, f)
 ---
 
 ### Clustering results:
-<img src=/assets/result.eps width = "400" height = "260" alt="result" 
-align=center>
+![Clustering results](/assets/result.png)
 
 ---
 
