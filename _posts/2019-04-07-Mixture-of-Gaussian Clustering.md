@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mixture-of-Gaussian Clustering
+title: Mixture-of-Gaussian Clustering——R realization
 categories: machine_learning
 
 ---
@@ -10,8 +10,13 @@ categories: machine_learning
 Author: Delin Zhao
 
 ---
+
+### Algorithm
+![GMM algorithm](/assets/GMM.png)
+
+---
+
 ### Probability density of Gaussian distribution:
-First we should write a function which can return the probability density of Gaussian distribution, or multivariate normal distribution for future use.
 
 {% highlight R %}
 dmvnorm <- function(x,mu,sigma){
@@ -22,7 +27,8 @@ dmvnorm <- function(x,mu,sigma){
 {% endhighlight %}
 
 ---
-### Main part of the code:
+
+### GMM-clustering:
 
 {% highlight R %}
 Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alpha.start=alpha,iter=10,plot=TRUE){
@@ -36,10 +42,9 @@ Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alp
   #alpha is the mixture coefficient and it's a k*1 vector with each element 1/k by default.
   #iter is the number of iteration and it's 10 by default.
   #this code will by default plot a graph of clustering results as long as the data has only two variables.
-  source("D:/R数据库/dmvnorm.R")
+  source("dmvnorm.R")
   D <- as.matrix(D)
   alpha <- rep(1/k,k)
-  #mu <- matrix(c(D[6,],D[22,],D[27,]),nrow = 2)
   mu <- t(D[1:k,])
   n <- ncol(D)
   m <- nrow(D)
@@ -88,7 +93,9 @@ Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alp
 {% endhighlight %}
 
 ---
+
 ### Use watermelon dataset 4.0 as an example:
+
 {% highlight R %}
 watermalon <- read.table("watermelon.txt",sep = ",",header=T)
 source("Mixture_of_Gaussian_clustering.R",encoding = "utf-8")
@@ -97,4 +104,8 @@ tag_cl <- Mixture_of_Gaussian_clustering(k=3,D=watermalon[,2:3],iter = 20,plot =
 
 ### Clustering results:
 
+
 ---
+
+### Reference
+《机器学习》周志华著.–北京：清华大学出版社
