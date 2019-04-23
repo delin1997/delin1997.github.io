@@ -4,8 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for this Jekyll theme at: [github.com/ashutosh2k12/hcz-jekyll-blog](https://github.com/ashutosh2k12/hcz-jekyll-blog)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Hello！这里是赵得霖，厦门大学经济学院2016级统计国际化试点班的学生。这个网站主要用于交流分享一些机器学习等方面的内容以及R代码实现。
+[HomePage](https://delin1997.github.io/)
+[Projects](https://delin1997.github.io/projects/)
+[MyGithub](https://github.com/delin1997)
