@@ -32,6 +32,7 @@ dmvnorm <- function(x,mu,sigma){
 ### GMM-clustering:
 
 **Mix_Gaussian_cluster.R**
+{% highlight R %}
 Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alpha.start=alpha,iter=10,plot=TRUE){
   #k is the number of mixture components.
   #D is the dataset.
