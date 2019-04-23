@@ -33,17 +33,17 @@ dmvnorm <- function(x,mu,sigma){
 
 **Mix_Gaussian_cluster.R**
 Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alpha.start=alpha,iter=10,plot=TRUE){
-  # k is the number of mixture components.
-  # D is the dataset.
-  # mu is a matrix in which the first column is the mean vector of the first Gaussian distribution 
-  # and the second column corresponds to the second Gaussian distribution, etc.
-  # By default, the initial mu will be made up of the first k rows of the data.
-  # sigma is a three-dimension array in which the first matrix is the sigma matrix of the first Guassian 
-  # distribution and ect.
-  # By default, each matrix of the initial sigma is set as a diagonal matrix with each diagonal element 0.1.
-  # alpha is the mixture coefficient and it's a k*1 vector with each element 1/k by default.
-  # iter is the number of iteration and it's 10 by default.
-  # this code will by default plot a graph of clustering results as long as the data has only two variables.
+  #k is the number of mixture components.
+  #D is the dataset.
+  #mu is a matrix in which the first column is the mean vector of the first Gaussian distribution 
+  #and the second column corresponds to the second Gaussian distribution, etc.
+  #By default, the initial mu will be made up of the first k rows of the data.
+  #sigma is a three-dimension array in which the first matrix is the sigma matrix of the first Guassian 
+  #distribution and ect.
+  #By default, each matrix of the initial sigma is set as a diagonal matrix with each diagonal element 0.1.
+  #alpha is the mixture coefficient and it's a k*1 vector with each element 1/k by default.
+  #iter is the number of iteration and it's 10 by default.
+  #this code will by default plot a graph of clustering results as long as the data has only two variables.
   source("dmvnorm.R")
   D <- as.matrix(D)
   alpha <- rep(1/k,k)
