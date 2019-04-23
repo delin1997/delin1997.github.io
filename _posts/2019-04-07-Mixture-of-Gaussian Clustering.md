@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mixture-of-Gaussian Clustering——R realization
+title: Mixture-of-Gaussian Clustering--R realization
 categories: machine_learning
 
 ---
@@ -100,7 +100,7 @@ Mixture_of_Gaussian_clustering <- function(k,D,mu.start=mu,sigma.start=sigma,alp
 
 ---
 
-### Use watermelon dataset 4.0 as an example:
+### Use watermalon dataset 4.0 as an example:
 
 {% highlight R %}
 watermalon <- read.table("watermalon.txt",sep = ",",header=T)
